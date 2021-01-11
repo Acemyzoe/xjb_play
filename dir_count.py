@@ -1,4 +1,4 @@
-
+#!/usr/bin/python
 import os
 
 def isnothide(dir):
@@ -8,7 +8,7 @@ def isnothide(dir):
         return False
     else: return True
 
-def total_dir_count(dir):
+def total_dir_count(dir="/home/ace/Desktop/github/TFL"):
     '计算文件(夹)总容量'
     total_dir = float(0)
     #判断文件还是文件夹
@@ -37,4 +37,5 @@ if __name__ == "__main__":
     # import timeit
     # print(timeit.timeit("demo()",setup="from __main__ import demo",number=1000))
     # print(total_dir_count("/home/ace/Desktop/github/data_anasylsis"))
-    print(total_dir_count("/home/ace/Downloads"))
+    import sys
+    print(total_dir_count(sys.argv[1]))
