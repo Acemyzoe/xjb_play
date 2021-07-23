@@ -1,4 +1,6 @@
-
+//////通过在c++代码中加载python模块的方式
+// 编译命令一：g++ demo2.cpp -I/usr/include/python3.8 -lpython3.8 -o demo2
+// 编译命令二：g++ demo2.cpp `pkg-config python3-embed --libs --cflags` -o demo2
 #include <python3.8/Python.h>
 #include <iostream>
 using namespace std;
