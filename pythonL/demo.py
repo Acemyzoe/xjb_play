@@ -9,13 +9,13 @@ from multiprocessing import cpu_count
 import random
 
 def exec_func(bt):
+    print('exec_func')
     while True: 
-        for i in range(0, 100):
-            pass
+        for i in range(0, 10):
+            print(i)
         time.sleep(bt)
 
 def test():
-
     parse = argparse.ArgumentParser(description='runing')
     parse.add_argument(
         "-c",
@@ -26,7 +26,7 @@ def test():
     parse.add_argument(
         "-t",
         "--time",
-        default= 0.01,
+        default= 100,
         help='cpu time'
         )
 
@@ -58,10 +58,9 @@ def test():
     except KeyboardInterrupt:
         print("手工结束!")
 
-def test2(n):
-    l = [random.random() for i in range(n)]
-    l.sort()
-    return l 
+def test2():
+    p = Process(target=exec_func, args=(10,))
+    p.start()
 
 if __name__ == "__main__":
-    test2(2000)
+    test2()
